@@ -26,6 +26,7 @@ public class PlayerBody : MonoBehaviour
 
 	private void LateUpdate()
 	{
+		// this should all be removed, just testing mesh collision rotation bug.
 		float x, y, z;
 		x = rigidBody.angularVelocity.x;
 		y = rigidBody.angularVelocity.y;
