@@ -149,11 +149,12 @@ public class PlayerController : MonoBehaviour
 			move = true;
 		}
 
-		if (move) 
-		{
+		if (move) {	
 			angleChange = direction - playerBody.transform.eulerAngles.y;
 			yAngle -= angleChange;
 			playerBody.Move (direction);
+		} else {
+			playerBody.getAnimator ().Play ("Idle");
 		}
 	}
 
