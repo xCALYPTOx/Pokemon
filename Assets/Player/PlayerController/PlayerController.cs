@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof (PlayerBody))]
-public class PlayerController : MonoBehaviour 
+public class PlayerController : MonoBehaviour
 {
 
 	private Transform camera;			// A reference to the camera instance.
@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization.
 	private void Start() 
 	{
-		camera = Camera.main.transform;
+		//camera = GameObject.Find ("PlayerCamera").GetComponent<Camera> ().transform;
+		camera = GetComponentInChildren<Camera>().transform;
 		playerBody = GetComponent<PlayerBody>();
 		playerHead = new Vector3 (playerBody.transform.position.x, playerBody.transform.position.y + 2, playerBody.transform.position.z);
 		distFromCharacter = Vector3.Distance (camera.position, playerHead);
